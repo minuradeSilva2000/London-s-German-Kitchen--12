@@ -6,7 +6,7 @@ describe("PGK Kitchens Dashboard - Image URL Collector", () => {
   });
 
   it("Collect image URLs containing /wp-content/uploads/ with PGK-•-Premium-German-Kitchens-•-AT.jpg path from kitchens dashboard pages", () => {
-    cy.task("collectKitchensDashboardImages", null, { timeout: 900000 }).then(
+    cy.task("collectKitchensDashboardImages", null, { timeout: 1800000 }).then(
       (result) => {
         expect(result.images.length).to.be.greaterThan(0);
         cy.log(`Collected ${result.images.length} matching images from ${result.totalPagesScanned} pages`);

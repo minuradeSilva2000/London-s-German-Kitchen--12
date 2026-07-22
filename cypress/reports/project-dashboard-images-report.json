@@ -1,8 +1,8 @@
 {
-  "totalImages": 144,
-  "uniqueImageUrls": 81,
+  "totalImages": 159,
+  "uniqueImageUrls": 78,
   "totalPagesScanned": 85,
-  "collectedAt": "2026-07-20T12:18:42.230Z",
+  "collectedAt": "2026-07-21T18:02:06.676Z",
   "images": [
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1-1024x681.jpeg",
@@ -41,28 +41,428 @@
       "page": "https://pgkltd.co.uk/portfolio/fjord-blue-concrete-grey/"
     },
     {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1-1024x681.jpeg",
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/fjord-blue-concrete-grey/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085153/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-7.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085153/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-8.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085151/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-6.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085152/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-9.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083651/Black-Green-Greige-Fusion-3.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083652/Black-Green-Greige-Fusion-2.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085145/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Contemporary-Black-Green-Greige-Silky-Matt-8.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085200/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-2.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085159/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-3.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085158/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-4.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085200/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-1.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084225/Anthracite-Fluted-Walnut-3.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084227/Anthracite-Fluted-Walnut-1.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085229/PGK-Focus-Contemporary-Mood-2.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085230/Focus-Contemporary-OCEAN-GREY-Porcelain-Slabs.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085229/benchtops-concrete-look-basalt.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085228/PGK-Focus-Contemporary-Mood-1.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083700/Concrete-Metallic-Elegance-3.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083659/Concrete-Metallic-Elegance-1.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085237/Focus-Contemporary-%E2%80%93-White-Concrete-Basalt-PGK-4.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085238/Focus-Contemporary-%E2%80%93-White-Concrete-Basalt-PGK-3.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/cashmere-brass-elegance/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/alpine-obsidian-edge/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/alpine-quartz-serenity/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/alpine-walnut-glow/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/polar-white-dark-oak/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/cashmere-oak-haven/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/midnight-pigeon-harmony/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/navy-matt-polar-contrast/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/cashmere-carrara-elegance/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/graphite-cashmere-luxe/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/polar-white-oak-flow/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/charcoal-oak-contrast/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/cashmere-matt-walnut-harmony/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/focus-sage-matt-quartz-sparkle-kitchen/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/pistachio-calacatta-charm/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/oyster-carrara-serenity/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/marine-blue-matte-polar-white/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/marine-calacatta-gold/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/sandgrey-ferro-blackgold/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/graphiteblack-brownconcrete/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/beige-black-green/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/lava-grey-coffee-wood/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/taupe-grey-oak/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/cream-walnut/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/satin-concrete-terra-grey/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/bone-soft-moss/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/satin-fenix-steel/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/slate-grey-white/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/oak-sand/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/stone-grey-supermatt-slate/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/stonegrey/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/gladstone-oak-slate-grey/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/white-high-gloss/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/sarah-cotton/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/white-gloss/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/white-hg-grey-hg/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/ferro-black-gold/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/highgloss-white/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/satin-grey/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/black-supermatt-3/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/black-supermatt-2/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/gladstone-oak-alpinewhite/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/alpine-white-highgloss/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/alpine-white-hg/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/bramham-storm-blue/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/aqua-supermatt/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/graphite-concrete/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/satin-slate-grey-concrete/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/satingrey-concrete-slategrey/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/graphite-black-walnut/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/honed-sand/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/concrete-salt-havanna-oak/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/alpine-white-high-gloss/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/satin-grey-lacquer/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/graphite-black-sierra-oak/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/graphite-black/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/sand-matte/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/heritage-blue/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/carrara-white-satin/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/landseer-fjord-blue/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/flame-scarfed-oak/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/honed-ivory-sierra-oak/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/steel-blue-ralc/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/carrara-white-green-satin/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/aqua-sierra-oak/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/alpine-white-gloss/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/sand-ultra-mat/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/farrow-ball-hay/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/lightnude-brownconcrete/"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1.jpeg",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/fjord-blue-concrete-grey/"
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085110/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/fjord-blue-concrete-grey/"
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085110/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/fjord-blue-concrete-grey/"
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083642/Fjord-Blue-Concrete-Charm-1-1024x566.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/fjord-blue-concrete-grey/"
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083641/Fjord-Blue-Concrete-Charm-3-1024x576.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/fjord-blue-concrete-grey/"
+      "url": "/wp-content/uploads/2024/12/PGK-•-Premium-German-Kitchens-•-AT-3.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
+    },
+    {
+      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-3.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
+    },
+    {
+      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-1.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
+    },
+    {
+      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-2.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
+    },
+    {
+      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-8.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
+    },
+    {
+      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-13.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
+    },
+    {
+      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-6.jpg",
+      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085124/PGK-%E2%80%A2-AC-%E2%80%A2-Contemporary-Moods-Board-5.jpg",
@@ -97,27 +497,7 @@
       "page": "https://pgkltd.co.uk/portfolio/grigio-smeraldo-coastal/"
     },
     {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085124/PGK-%E2%80%A2-AC-%E2%80%A2-Contemporary-Moods-Board-5.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/grigio-smeraldo-coastal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085123/PGK-%E2%80%A2-AC-%E2%80%A2-Contemporary-Moods-Board-6.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/grigio-smeraldo-coastal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085122/PGK-%E2%80%A2-AC-%E2%80%A2-Contemporary-Moods-Board-4.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/grigio-smeraldo-coastal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083645/Grigio-Smeraldo-Coastal-3-1024x566.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/grigio-smeraldo-coastal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083646/Grigio-Smeraldo-Coastal-2-1024x576.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/grigio-smeraldo-coastal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-AC-Gemma-Roofing-%E2%80%93-Irida-1.jpg",
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/grigio-smeraldo-coastal/"
     },
     {
@@ -161,136 +541,8 @@
       "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
     },
     {
-      "url": "https://pgkltd.co.uk/wp-content/uploads/2025/03/26083617/DSC_1491-1.webp",
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085137/PGK-%E2%80%A2-AC-%E2%80%A2-Contemporary-Moods-Board-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085136/PGK-%E2%80%A2-AC-%E2%80%A2-Contemporary-Moods-Board-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085136/PGK-%E2%80%A2-AC-%E2%80%A2-Contemporary-Moods-Board-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085139/PGK-%E2%80%A2-AC-%E2%80%A2-Contemporary-Moods-Board-1.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083649/Champagne-Metal-Effect-Lacquer-3-1024x566.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083650/Champagne-Metal-Effect-Lacquer-2-1024x576.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
-    },
-    {
-      "url": "https://pgkltd.co.uk/wp-content/uploads/2025/03/26083617/DSC_1491-1.webp",
-      "page": "https://pgkltd.co.uk/portfolio/champagne-oakelegance/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085153/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-7.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085153/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-8.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085151/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-6.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085152/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-9.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083651/Black-Green-Greige-Fusion-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083652/Black-Green-Greige-Fusion-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085145/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Contemporary-Black-Green-Greige-Silky-Matt-8.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085153/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-7.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085153/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-8.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085151/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-6.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085152/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Black-Green-Greige-Silky-Matt-Moods-Board-9.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083651/Black-Green-Greige-Fusion-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083652/Black-Green-Greige-Fusion-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/blackgreen-greigesilkymatt/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085200/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-2.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085159/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-3.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085158/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-4.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085200/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-1.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084225/Anthracite-Fluted-Walnut-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084227/Anthracite-Fluted-Walnut-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085200/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-2.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085159/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-3.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085158/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-4.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085200/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Aptum-Moods-Board-1.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084225/Anthracite-Fluted-Walnut-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084227/Anthracite-Fluted-Walnut-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/anthracite-walnutharmony/"
     },
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085210/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Ellesmere-Rd-Mood-1.jpg",
@@ -317,31 +569,7 @@
       "page": "https://pgkltd.co.uk/portfolio/plaster-brass-serenity/"
     },
     {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085210/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Ellesmere-Rd-Mood-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/plaster-brass-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085211/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Ellesmere-Rd-Mood-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/plaster-brass-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085210/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Ellesmere-Rd-Mood-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/plaster-brass-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085209/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-Signature-Collection-%E2%80%A2-Ellesmere-Rd-Mood.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/plaster-brass-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083654/Plaster-Brass-Serenity-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/plaster-brass-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083653/Plaster-Brass-Serenity-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/plaster-brass-serenity/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-SC-Traditional-Ellesmere-Rd-1.jpg",
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/plaster-brass-serenity/"
     },
     {
@@ -373,160 +601,12 @@
       "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
     },
     {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085245/Focus-%E2%80%93-Traditional-%E2%80%93-Malbern-Rd-UB3-%E2%80%93-PGK-7.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085229/PGK-Focus-Contemporary-Mood-2.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085138/PGK-Focus-Traditional-Mood-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085138/PGK-Focus-Traditional-Mood-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085218/PGK-Focus-Traditional-Mood.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083658/Slate-Shaker-Harmony-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083656/Slate-Shaker-Harmony-3.jpg",
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
     },
     {
       "url": "https://wp-content/uploads/2024/12/Focus-%E2%80%93-Traditional-%E2%80%93-Malbern-Rd-UB3-%E2%80%93-PGK-7.jpg",
       "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085229/PGK-Focus-Contemporary-Mood-2.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085230/Focus-Contemporary-OCEAN-GREY-Porcelain-Slabs.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085229/benchtops-concrete-look-basalt.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085228/PGK-Focus-Contemporary-Mood-1.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083700/Concrete-Metallic-Elegance-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083659/Concrete-Metallic-Elegance-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085237/Focus-Contemporary-%E2%80%93-White-Concrete-Basalt-PGK-4.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085238/Focus-Contemporary-%E2%80%93-White-Concrete-Basalt-PGK-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085229/PGK-Focus-Contemporary-Mood-2.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085230/Focus-Contemporary-OCEAN-GREY-Porcelain-Slabs.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085229/benchtops-concrete-look-basalt.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085228/PGK-Focus-Contemporary-Mood-1.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083700/Concrete-Metallic-Elegance-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083659/Concrete-Metallic-Elegance-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/concrete-metallic/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085110/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085110/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2025/01/PGK-•-Premium-German-Kitchens-•-AT.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-•-Premium-German-Kitchens-•-AT-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1.jpeg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085110/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085110/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-8.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-13.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-6.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/11/26085251/Signature-Contemporary-MOOD-PGK-1.jpg",
@@ -557,27 +637,7 @@
       "page": "https://pgkltd.co.uk/portfolio/ebony-oak-serenity/"
     },
     {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/11/26085251/Signature-Contemporary-MOOD-PGK-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/ebony-oak-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/11/26085249/Signature-Contemporary-MOOD-PGK-4-scaled.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/ebony-oak-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/11/26085250/Signature-Contemporary-MOOD-PGK-3-scaled.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/ebony-oak-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/11/26085250/Signature-Contemporary-MOOD-PGK-2-scaled.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/ebony-oak-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083703/Ebony-Oak-Serenity-2.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/ebony-oak-serenity/"
-    },
-    {
-      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083702/Ebony-Oak-Serenity-3.jpg",
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/ebony-oak-serenity/"
     }
   ]
