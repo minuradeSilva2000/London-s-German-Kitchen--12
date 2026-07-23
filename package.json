@@ -12,6 +12,6 @@
   "devDependencies": {
     "axios": "^1.7.0",
     "cypress": "^15.18.1",
-    "sharp": "^0.33.0"
+    "sharp": "^0.33.5"
   }
 }

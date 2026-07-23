@@ -1454,6 +1454,138 @@ module.exports = defineConfig({
 
           return null;
         },
+        async collectWhyPGKDashboardImages() {
+          const imageUrls = new Set();
+          const pageUrl = "https://pgkltd.co.uk/pgk-approach/";
+
+          let pageResp;
+          try {
+            pageResp = await axios.get(pageUrl, {
+              timeout: 20000,
+              headers: {
+                "User-Agent":
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+              },
+            });
+          } catch (err) {
+            console.log(`Failed to fetch Why PGK page: ${err.message}`);
+            return { totalPagesScanned: 1, images: [] };
+          }
+
+          const html = pageResp.data;
+          let m;
+
+          const dataOrigSrcRegex = /data-orig-src=["']([^"']+)["']/g;
+          while ((m = dataOrigSrcRegex.exec(html)) !== null) {
+            imageUrls.add(m[1]);
+          }
+
+          const imgSrcRegex = /<img[^>]*src=["']([^"']+)["']/g;
+          while ((m = imgSrcRegex.exec(html)) !== null) {
+            const url = m[1];
+            if (url.startsWith("http") && !url.startsWith("data:")) {
+              imageUrls.add(url);
+            }
+          }
+
+          const dataBgRegex = /data-bg=["']([^"']+)["']/g;
+          while ((m = dataBgRegex.exec(html)) !== null) {
+            imageUrls.add(m[1]);
+          }
+
+          const dataSrcsetRegex = /data-srcset=["']([^"']+)["']/g;
+          while ((m = dataSrcsetRegex.exec(html)) !== null) {
+            const srcsetEntries = m[1].split(",");
+            for (const entry of srcsetEntries) {
+              const url = entry.trim().split(/\s+/)[0];
+              if (url && url.startsWith("http")) {
+                imageUrls.add(url);
+              }
+            }
+          }
+
+          const srcsetRegex = /srcset=["']([^"']+)["']/g;
+          while ((m = srcsetRegex.exec(html)) !== null) {
+            const srcsetEntries = m[1].split(",");
+            for (const entry of srcsetEntries) {
+              const url = entry.trim().split(/\s+/)[0];
+              if (url && url.startsWith("http")) {
+                imageUrls.add(url);
+              }
+            }
+          }
+
+          const backgroundUrlRegex = /background-image:\s*url\(["']?([^"')]+)["']?\)/g;
+          while ((m = backgroundUrlRegex.exec(html)) !== null) {
+            const url = m[1];
+            if (url.startsWith("http") && !url.startsWith("data:")) {
+              imageUrls.add(url);
+            }
+          }
+
+          const ogImageRegex = /<meta[^>]*content=["']([^"']+\.(jpg|jpeg|png|webp))["'][^>]*>/gi;
+          while ((m = ogImageRegex.exec(html)) !== null) {
+            if (m[1].startsWith("http")) imageUrls.add(m[1]);
+          }
+
+          const wpUploadRegex = /["'](https?:\/\/[^"']*wp-content\/uploads\/[^"']+\.(jpg|jpeg|png|webp|gif|svg))[^"']*["']/gi;
+          while ((m = wpUploadRegex.exec(html)) !== null) {
+            imageUrls.add(m[1]);
+          }
+
+          const filtered = [...imageUrls].filter(
+            (u) =>
+              u.startsWith("http") &&
+              !u.includes("data:") &&
+              !u.includes("gravatar") &&
+              !u.includes("analytics.") &&
+              !u.includes("googletagmanager") &&
+              !u.includes("google.com/recaptcha") &&
+              !u.endsWith(".js") &&
+              /\.(jpg|jpeg|png|webp|gif|svg)(\?|$)/i.test(u)
+          );
+
+          const allImages = filtered.map((url) => ({ url, page: pageUrl }));
+
+          console.log(`\nCollected ${allImages.length} images from Why PGK page`);
+          allImages.forEach((img, i) => console.log(`  ${i + 1}. ${img.url}`));
+          return { totalPagesScanned: 1, images: allImages };
+        },
+
+        saveWhyPGKDashboardReport(data) {
+          const dir = path.join("cypress", "reports");
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+          }
+
+          const file = path.join(dir, data.filename || "why-pgk-dashboard-images-report.json");
+          const uniqueUrls = [...new Set(data.images.map((i) => i.url))];
+
+          const output = {
+            totalImages: data.images.length,
+            uniqueImageUrls: uniqueUrls.length,
+            totalPagesScanned: data.totalPagesScanned,
+            collectedAt: data.collectedAt,
+            images: data.images,
+          };
+
+          fs.writeFileSync(file, JSON.stringify(output, null, 2));
+
+          console.log(`\n========================================`);
+          console.log(`  WHY PGK DASHBOARD IMAGE REPORT`);
+          console.log(`========================================`);
+          console.log(`  Total Images  : ${data.images.length}`);
+          console.log(`  Unique URLs   : ${uniqueUrls.length}`);
+          console.log(`  Pages Scanned : ${data.totalPagesScanned}`);
+          console.log(`  Saved to      : ${file}`);
+          console.log(`========================================\n`);
+
+          data.images.forEach((img, i) => {
+            console.log(`  ${i + 1}. ${img.url} (from: ${img.page})`);
+          });
+
+          return null;
+        },
 
         saveReport(data) {
           const dir = path.join("cypress", "reports");
@@ -1477,6 +1609,9 @@ module.exports = defineConfig({
             collectedAt: data.collectedAt,
             images: images,
           };
+
+
+
 
           fs.writeFileSync(file, JSON.stringify(output, null, 2));
 
