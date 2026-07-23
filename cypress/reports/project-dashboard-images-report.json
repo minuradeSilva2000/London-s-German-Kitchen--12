@@ -1,8 +1,8 @@
 {
-  "totalImages": 159,
-  "uniqueImageUrls": 78,
+  "totalImages": 158,
+  "uniqueImageUrls": 73,
   "totalPagesScanned": 85,
-  "collectedAt": "2026-07-21T18:02:06.676Z",
+  "collectedAt": "2026-07-23T07:36:59.001Z",
   "images": [
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1-1024x681.jpeg",
@@ -154,6 +154,10 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/anthracite-oak-harmony/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/alpine-walnut-glow/"
     },
     {
@@ -162,7 +166,7 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
-      "page": "https://pgkltd.co.uk/portfolio/cashmere-oak-haven/"
+      "page": "https://pgkltd.co.uk/portfolio/forest-calacatta-charm/"
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
@@ -175,10 +179,6 @@
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/cashmere-carrara-elegance/"
-    },
-    {
-      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
-      "page": "https://pgkltd.co.uk/portfolio/graphite-cashmere-luxe/"
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
@@ -234,6 +234,10 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/jade-anti-fingerprint/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/cream-walnut/"
     },
     {
@@ -266,6 +270,10 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/stone-grey/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/gladstone-oak-slate-grey/"
     },
     {
@@ -291,6 +299,10 @@
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/highgloss-white/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/black-supermatt-concrete/"
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
@@ -390,6 +402,10 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/oak-truffle-veneer-lacquer/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/steel-blue-ralc/"
     },
     {
@@ -434,22 +450,6 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-•-Premium-German-Kitchens-•-AT-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-3.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-1.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2025/02/Putty-Charcoal-Haven-2.jpg",
       "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
@@ -602,10 +602,6 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
-      "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
-    },
-    {
-      "url": "https://wp-content/uploads/2024/12/Focus-%E2%80%93-Traditional-%E2%80%93-Malbern-Rd-UB3-%E2%80%93-PGK-7.jpg",
       "page": "https://pgkltd.co.uk/portfolio/slate-grey/"
     },
     {
