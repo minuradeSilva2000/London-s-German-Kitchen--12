@@ -1,8 +1,8 @@
 {
-  "totalImages": 158,
-  "uniqueImageUrls": 73,
+  "totalImages": 157,
+  "uniqueImageUrls": 70,
   "totalPagesScanned": 85,
-  "collectedAt": "2026-07-23T07:36:59.001Z",
+  "collectedAt": "2026-07-23T11:48:40.313Z",
   "images": [
     {
       "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085111/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-Moods-Board-1-1024x681.jpeg",
@@ -170,6 +170,10 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/cashmere-oak-haven/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/midnight-pigeon-harmony/"
     },
     {
@@ -179,6 +183,10 @@
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
       "page": "https://pgkltd.co.uk/portfolio/cashmere-carrara-elegance/"
+    },
+    {
+      "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
+      "page": "https://pgkltd.co.uk/portfolio/graphite-cashmere-luxe/"
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/7423b192c17ee95424b1ddeb67e58d1e.min.js?ver=3.15.6",
@@ -450,18 +458,6 @@
     },
     {
       "url": "https://pgkltd.co.uk/wp-content/uploads/fusion-scripts/91d7ce4d6f1bcce5ebd6592ea9a3b523.min.js?ver=3.15.6",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-8.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-13.jpg",
-      "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
-    },
-    {
-      "url": "/wp-content/uploads/2024/12/PGK-%E2%80%A2-Premium-German-Kitchens-%E2%80%A2-AT-6.jpg",
       "page": "https://pgkltd.co.uk/portfolio/putty-charcoal/"
     },
     {
