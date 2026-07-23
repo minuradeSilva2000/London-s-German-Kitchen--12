@@ -1,0 +1,188 @@
+{
+  "totalImages": 25,
+  "uniqueImageUrls": 13,
+  "totalPagesScanned": 4,
+  "collectedAt": "2026-07-23T18:02:49.119Z",
+  "showrooms": [
+    {
+      "name": "Amersham",
+      "url": "https://pgkltd.co.uk/showrooms/amersham/",
+      "imagesOnShowroomPage": 10,
+      "nestedCards": 0,
+      "nestedCardUrls": []
+    },
+    {
+      "name": "Bounds Green",
+      "url": "https://pgkltd.co.uk/showrooms/bounds-green/",
+      "imagesOnShowroomPage": 5,
+      "nestedCards": 0,
+      "nestedCardUrls": []
+    },
+    {
+      "name": "Maida Vale",
+      "url": "https://pgkltd.co.uk/showrooms/maida-vale/",
+      "imagesOnShowroomPage": 5,
+      "nestedCards": 0,
+      "nestedCardUrls": []
+    },
+    {
+      "name": "Wimbledon",
+      "url": "https://pgkltd.co.uk/showrooms/wimbledon/",
+      "imagesOnShowroomPage": 5,
+      "nestedCards": 0,
+      "nestedCardUrls": []
+    }
+  ],
+  "images": [
+    {
+      "url": "https://media.pgkltd.co.uk/2026/06/2026_06_WhatsApp-Image-2026-06-17-at-9.18.12-PM.jpeg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084450/mbrg237_105-Neu-highres.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085222/SC-0000.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083626/Artisan_v2.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2025/07/Our-Collection-of-Luxury-Designs-PGK-5.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2026/06/2026_06_WhatsApp-Image-2026-06-17-at-9.18.12-PM-200x200.jpeg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2026/06/2026_06_WhatsApp-Image-2026-06-17-at-9.18.12-PM-400x400.jpeg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2026/06/2026_06_WhatsApp-Image-2026-06-17-at-9.18.12-PM-600x600.jpeg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2026/06/2026_06_WhatsApp-Image-2026-06-17-at-9.18.12-PM-800x800.jpeg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2026/06/2026_06_WhatsApp-Image-2026-06-17-at-9.18.12-PM-1200x1200.jpeg",
+      "page": "https://pgkltd.co.uk/showrooms/amersham/",
+      "showroom": "Amersham",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085142/PGK-Bounds-Green-Map.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/bounds-green/",
+      "showroom": "Bounds Green",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084450/mbrg237_105-Neu-highres.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/bounds-green/",
+      "showroom": "Bounds Green",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085222/SC-0000.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/bounds-green/",
+      "showroom": "Bounds Green",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083626/Artisan_v2.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/bounds-green/",
+      "showroom": "Bounds Green",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2025/07/Our-Collection-of-Luxury-Designs-PGK-5.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/bounds-green/",
+      "showroom": "Bounds Green",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085141/PGK-Maida-Vale-Map.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/maida-vale/",
+      "showroom": "Maida Vale",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084450/mbrg237_105-Neu-highres.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/maida-vale/",
+      "showroom": "Maida Vale",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085222/SC-0000.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/maida-vale/",
+      "showroom": "Maida Vale",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083626/Artisan_v2.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/maida-vale/",
+      "showroom": "Maida Vale",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2025/07/Our-Collection-of-Luxury-Designs-PGK-5.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/maida-vale/",
+      "showroom": "Maida Vale",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085143/PGK-Wimbledon-map.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/wimbledon/",
+      "showroom": "Wimbledon",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/01/26084450/mbrg237_105-Neu-highres.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/wimbledon/",
+      "showroom": "Wimbledon",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2024/12/26085222/SC-0000.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/wimbledon/",
+      "showroom": "Wimbledon",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/wp-content/uploads/2025/02/26083626/Artisan_v2.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/wimbledon/",
+      "showroom": "Wimbledon",
+      "source": "showroom-page"
+    },
+    {
+      "url": "https://media.pgkltd.co.uk/2025/07/Our-Collection-of-Luxury-Designs-PGK-5.jpg",
+      "page": "https://pgkltd.co.uk/showrooms/wimbledon/",
+      "showroom": "Wimbledon",
+      "source": "showroom-page"
+    }
+  ]
+}

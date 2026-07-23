@@ -1005,6 +1005,456 @@ module.exports = defineConfig({
           return null;
         },
 
+        async collectShowroomsDashboardImages() {
+          const imageUrls = new Set();
+          const pageUrl = "https://pgkltd.co.uk/showrooms/";
+
+          let pageResp;
+          try {
+            pageResp = await axios.get(pageUrl, {
+              timeout: 20000,
+              headers: {
+                "User-Agent":
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+              },
+            });
+          } catch (err) {
+            console.log(`Failed to fetch showrooms page: ${err.message}`);
+            return { totalPagesScanned: 1, images: [] };
+          }
+
+          const html = pageResp.data;
+
+          let m;
+
+          const dataOrigSrcRegex = /data-orig-src=["']([^"']+)["']/g;
+          while ((m = dataOrigSrcRegex.exec(html)) !== null) {
+            imageUrls.add(m[1]);
+          }
+
+          const dataBgRegex = /data-bg=["']([^"']+)["']/g;
+          while ((m = dataBgRegex.exec(html)) !== null) {
+            imageUrls.add(m[1]);
+          }
+
+          const imgSrcRegex = /<img[^>]*src=["']([^"']+)["']/g;
+          while ((m = imgSrcRegex.exec(html)) !== null) {
+            const url = m[1];
+            if (url.startsWith("http") && !url.startsWith("data:")) {
+              imageUrls.add(url);
+            }
+          }
+
+          const dataSrcsetRegex = /data-srcset=["']([^"']+)["']/g;
+          while ((m = dataSrcsetRegex.exec(html)) !== null) {
+            const srcsetEntries = m[1].split(",");
+            for (const entry of srcsetEntries) {
+              const url = entry.trim().split(/\s+/)[0];
+              if (url && url.startsWith("http")) {
+                imageUrls.add(url);
+              }
+            }
+          }
+
+          const filtered = [...imageUrls].filter(
+            (u) =>
+              u.startsWith("http") &&
+              !u.endsWith(".svg") &&
+              !u.includes("data:") &&
+              !u.includes("gravatar") &&
+              /\.(jpg|jpeg|png|webp)(\?|$)/i.test(u)
+          );
+
+          const allImages = filtered.map((url) => ({ url, page: pageUrl }));
+
+          console.log(`\nCollected ${allImages.length} images from showrooms page`);
+          return { totalPagesScanned: 1, images: allImages };
+        },
+
+        saveShowroomsDashboardReport(data) {
+          const dir = path.join("cypress", "reports");
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+          }
+
+          const file = path.join(dir, data.filename || "showrooms-dashboard-images-report.json");
+          const uniqueUrls = [...new Set(data.images.map((i) => i.url))];
+
+          const output = {
+            totalImages: data.images.length,
+            uniqueImageUrls: uniqueUrls.length,
+            totalPagesScanned: data.totalPagesScanned,
+            collectedAt: data.collectedAt,
+            images: data.images,
+          };
+
+          fs.writeFileSync(file, JSON.stringify(output, null, 2));
+
+          console.log(`\n========================================`);
+          console.log(`  SHOWROOMS DASHBOARD IMAGE REPORT`);
+          console.log(`========================================`);
+          console.log(`  Total Images  : ${data.images.length}`);
+          console.log(`  Unique URLs   : ${uniqueUrls.length}`);
+          console.log(`  Pages Scanned : ${data.totalPagesScanned}`);
+          console.log(`  Saved to      : ${file}`);
+          console.log(`========================================\n`);
+
+          data.images.forEach((img, i) => {
+            console.log(`  ${i + 1}. ${img.url} (from: ${img.page})`);
+          });
+
+          return null;
+        },
+
+        async collectShowroomDashboardImages(showroomUrls) {
+          const allImages = [];
+          let totalPagesScanned = 0;
+
+          for (const url of showroomUrls) {
+            totalPagesScanned++;
+            const imageUrls = new Set();
+
+            let pageResp;
+            try {
+              pageResp = await axios.get(url, {
+                timeout: 20000,
+                headers: {
+                  "User-Agent":
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+                },
+              });
+            } catch (err) {
+              console.log(`Failed to fetch ${url}: ${err.message}`);
+              continue;
+            }
+
+            const html = pageResp.data;
+            let m;
+
+            const dataOrigSrcRegex = /data-orig-src=["']([^"']+)["']/g;
+            while ((m = dataOrigSrcRegex.exec(html)) !== null) {
+              imageUrls.add(m[1]);
+            }
+
+            const dataBgRegex = /data-bg=["']([^"']+)["']/g;
+            while ((m = dataBgRegex.exec(html)) !== null) {
+              imageUrls.add(m[1]);
+            }
+
+            const imgSrcRegex = /<img[^>]*src=["']([^"']+)["']/g;
+            while ((m = imgSrcRegex.exec(html)) !== null) {
+              const imgUrl = m[1];
+              if (imgUrl.startsWith("http") && !imgUrl.startsWith("data:")) {
+                imageUrls.add(imgUrl);
+              }
+            }
+
+            const dataSrcsetRegex = /data-srcset=["']([^"']+)["']/g;
+            while ((m = dataSrcsetRegex.exec(html)) !== null) {
+              const srcsetEntries = m[1].split(",");
+              for (const entry of srcsetEntries) {
+                const imgUrl = entry.trim().split(/\s+/)[0];
+                if (imgUrl && imgUrl.startsWith("http")) {
+                  imageUrls.add(imgUrl);
+                }
+              }
+            }
+
+            const backgroundUrlRegex = /background-image:\s*url\(["']?([^"')]+)["']?\)/g;
+            while ((m = backgroundUrlRegex.exec(html)) !== null) {
+              const imgUrl = m[1];
+              if (imgUrl.startsWith("http") && !imgUrl.startsWith("data:")) {
+                imageUrls.add(imgUrl);
+              }
+            }
+
+            const filtered = [...imageUrls].filter(
+              (u) =>
+                u.startsWith("http") &&
+                !u.endsWith(".svg") &&
+                !u.includes("data:") &&
+                !u.includes("gravatar") &&
+                /\.(jpg|jpeg|png|webp)(\?|$)/i.test(u)
+            );
+
+            const showroomName = url.replace("https://pgkltd.co.uk/showrooms/", "").replace(/\/$/, "").replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+
+            filtered.forEach((imgUrl) => {
+              allImages.push({ url: imgUrl, page: url, showroom: showroomName });
+            });
+
+            console.log(`  ${showroomName}: ${filtered.length} images found`);
+          }
+
+          return { totalPagesScanned, images: allImages };
+        },
+
+        saveShowroomDashboardReport(data) {
+          const dir = path.join("cypress", "reports");
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+          }
+
+          const file = path.join(dir, data.filename || "showroom-dashboard-images-report.json");
+          const uniqueUrls = [...new Set(data.images.map((i) => i.url))];
+
+          const output = {
+            totalImages: data.images.length,
+            uniqueImageUrls: uniqueUrls.length,
+            totalPagesScanned: data.totalPagesScanned,
+            collectedAt: data.collectedAt,
+            showrooms: data.showrooms || [],
+            images: data.images,
+          };
+
+          fs.writeFileSync(file, JSON.stringify(output, null, 2));
+
+          console.log(`\n========================================`);
+          console.log(`  SHOWROOM DASHBOARD IMAGE REPORT`);
+          console.log(`========================================`);
+          console.log(`  Total Images  : ${data.images.length}`);
+          console.log(`  Unique URLs   : ${uniqueUrls.length}`);
+          console.log(`  Pages Scanned : ${data.totalPagesScanned}`);
+          console.log(`  Saved to      : ${file}`);
+          console.log(`========================================\n`);
+
+          const grouped = {};
+          data.images.forEach((img) => {
+            if (!grouped[img.showroom]) grouped[img.showroom] = [];
+            grouped[img.showroom].push(img.url);
+          });
+
+          Object.entries(grouped).forEach(([showroom, urls]) => {
+            console.log(`  ${showroom} (${urls.length} images):`);
+            urls.forEach((url, i) => {
+              console.log(`    ${i + 1}. ${url}`);
+            });
+            console.log("");
+          });
+
+          return null;
+        },
+
+        async collectShowroomSectionImages(input) {
+          const BASE = "https://pgkltd.co.uk";
+          const showroomUrls = input.showroomUrls || [];
+          const nestedCardUrls = input.nestedCardUrls || [];
+          const allImages = [];
+          let totalPagesScanned = 0;
+
+          function extractImages(html, pageUrl) {
+            const imageUrls = new Set();
+            let m;
+
+            const dataOrigSrcRegex = /data-orig-src=["']([^"']+)["']/g;
+            while ((m = dataOrigSrcRegex.exec(html)) !== null) {
+              imageUrls.add(m[1]);
+            }
+
+            const dataBgRegex = /data-bg=["']([^"']+)["']/g;
+            while ((m = dataBgRegex.exec(html)) !== null) {
+              imageUrls.add(m[1]);
+            }
+
+            const imgSrcRegex = /<img[^>]*src=["']([^"']+)["']/g;
+            while ((m = imgSrcRegex.exec(html)) !== null) {
+              const url = m[1];
+              if (url.startsWith("http") && !url.startsWith("data:")) {
+                imageUrls.add(url);
+              }
+            }
+
+            const dataSrcsetRegex = /data-srcset=["']([^"']+)["']/g;
+            while ((m = dataSrcsetRegex.exec(html)) !== null) {
+              const entries = m[1].split(",");
+              for (const entry of entries) {
+                const url = entry.trim().split(/\s+/)[0];
+                if (url && url.startsWith("http")) {
+                  imageUrls.add(url);
+                }
+              }
+            }
+
+            const bgUrlRegex = /background-image:\s*url\(["']?([^"')]+)["']?\)/g;
+            while ((m = bgUrlRegex.exec(html)) !== null) {
+              const url = m[1];
+              if (url.startsWith("http") && !url.startsWith("data:")) {
+                imageUrls.add(url);
+              }
+            }
+
+            return [...imageUrls].filter(
+              (u) =>
+                u.startsWith("http") &&
+                !u.endsWith(".svg") &&
+                !u.includes("data:") &&
+                !u.includes("gravatar") &&
+                /\.(jpg|jpeg|png|webp)(\?|$)/i.test(u)
+            );
+          }
+
+          async function fetchPage(url) {
+            const resp = await axios.get(url, {
+              timeout: 20000,
+              headers: {
+                "User-Agent":
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+              },
+            });
+            return resp.data;
+          }
+
+          const showrooms = [];
+
+          for (const url of showroomUrls) {
+            const slug = url.replace(`${BASE}/showrooms/`, "").replace(/\/$/, "");
+            const showroomName = slug
+              .replace(/-/g, " ")
+              .replace(/\b\w/g, (c) => c.toUpperCase());
+
+            console.log(`--- ${showroomName} ---`);
+            console.log(`  Fetching: ${url}`);
+            totalPagesScanned++;
+
+            let showroomHtml;
+            try {
+              showroomHtml = await fetchPage(url);
+            } catch (err) {
+              console.log(`  Failed: ${err.message}`);
+              continue;
+            }
+
+            const showroomImages = extractImages(showroomHtml, url);
+            showroomImages.forEach((imgUrl) => {
+              allImages.push({
+                url: imgUrl,
+                page: url,
+                showroom: showroomName,
+                source: "showroom-page",
+              });
+            });
+            console.log(`  Showroom page: ${showroomImages.length} images`);
+
+            const showroomNestedCards = nestedCardUrls.filter(
+              (c) => c.showroom === showroomName
+            );
+
+            if (showroomNestedCards.length > 0) {
+              console.log(
+                `  Found ${showroomNestedCards.length} nested portfolio cards`
+              );
+
+              for (const card of showroomNestedCards) {
+                totalPagesScanned++;
+                const cardName = card.url
+                  .replace(`${BASE}/portfolio/`, "")
+                  .replace(/\/$/, "")
+                  .replace(/-/g, " ")
+                  .replace(/\b\w/g, (c) => c.toUpperCase());
+
+                console.log(`  Fetching card: ${cardName}`);
+                try {
+                  const cardHtml = await fetchPage(card.url);
+                  const cardImages = extractImages(cardHtml, card.url);
+                  cardImages.forEach((imgUrl) => {
+                    allImages.push({
+                      url: imgUrl,
+                      page: card.url,
+                      showroom: showroomName,
+                      source: `nested-card/${cardName}`,
+                    });
+                  });
+                  console.log(`    ${cardImages.length} images found`);
+                } catch (err) {
+                  console.log(`    Failed: ${err.message}`);
+                }
+              }
+            } else {
+              console.log(`  No nested portfolio cards found`);
+            }
+
+            showrooms.push({
+              name: showroomName,
+              url: url,
+              imagesOnShowroomPage: showroomImages.length,
+              nestedCards: showroomNestedCards.length,
+              nestedCardUrls: showroomNestedCards.map((c) => c.url),
+            });
+
+            console.log("");
+          }
+
+          return {
+            totalPagesScanned,
+            images: allImages,
+            showrooms,
+          };
+        },
+
+        saveShowroomSectionReport(data) {
+          const dir = path.join("cypress", "reports");
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+          }
+
+          const file = path.join(
+            dir,
+            data.filename || "showroom-section-images-report.json"
+          );
+          const uniqueUrls = [...new Set(data.images.map((i) => i.url))];
+
+          const output = {
+            totalImages: data.images.length,
+            uniqueImageUrls: uniqueUrls.length,
+            totalPagesScanned: data.totalPagesScanned,
+            collectedAt: data.collectedAt,
+            showrooms: data.showrooms || [],
+            images: data.images,
+          };
+
+          fs.writeFileSync(file, JSON.stringify(output, null, 2));
+
+          console.log(`\n========================================`);
+          console.log(`  SHOWROOM SECTION IMAGE REPORT`);
+          console.log(`========================================`);
+          console.log(`  Total Images  : ${data.images.length}`);
+          console.log(`  Unique URLs   : ${uniqueUrls.length}`);
+          console.log(`  Pages Scanned : ${data.totalPagesScanned}`);
+          console.log(`  Saved to      : ${file}`);
+          console.log(`========================================\n`);
+
+          if (data.showrooms) {
+            data.showrooms.forEach((sr) => {
+              console.log(`  ${sr.name}:`);
+              console.log(`    Showroom page images: ${sr.imagesOnShowroomPage}`);
+              console.log(`    Nested cards: ${sr.nestedCards}`);
+              if (sr.nestedCardUrls && sr.nestedCardUrls.length > 0) {
+                sr.nestedCardUrls.forEach((url, i) => {
+                  console.log(`      ${i + 1}. ${url}`);
+                });
+              }
+              console.log("");
+            });
+          }
+
+          const grouped = {};
+          data.images.forEach((img) => {
+            const key = `${img.showroom} (${img.source})`;
+            if (!grouped[key]) grouped[key] = [];
+            grouped[key].push(img.url);
+          });
+
+          Object.entries(grouped).forEach(([group, urls]) => {
+            console.log(`  ${group} - ${urls.length} images:`);
+            urls.forEach((url, i) => {
+              console.log(`    ${i + 1}. ${url}`);
+            });
+            console.log("");
+          });
+
+          return null;
+        },
+
         saveReport(data) {
           const dir = path.join("cypress", "reports");
           if (!fs.existsSync(dir)) {
