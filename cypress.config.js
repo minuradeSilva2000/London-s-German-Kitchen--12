@@ -228,7 +228,8 @@ async function fetchProjectPageImageUrls(pageUrl) {
       u.includes("/wp-content/uploads/") &&
       (u.startsWith("http") || u.startsWith("/")) &&
       !u.endsWith(".svg") &&
-      !u.includes("data:")
+      !u.includes("data:") &&
+      /\.(jpg|jpeg|png|webp)(\?|$)/i.test(u)
   );
 }
 
@@ -823,6 +824,173 @@ module.exports = defineConfig({
 
           console.log(`\n========================================`);
           console.log(`  PROJECT DASHBOARD IMAGE REPORT`);
+          console.log(`========================================`);
+          console.log(`  Total Images  : ${data.images.length}`);
+          console.log(`  Unique URLs   : ${uniqueUrls.length}`);
+          console.log(`  Pages Scanned : ${data.totalPagesScanned}`);
+          console.log(`  Saved to      : ${file}`);
+          console.log(`========================================\n`);
+
+          data.images.forEach((img, i) => {
+            console.log(`  ${i + 1}. ${img.url} (from: ${img.page})`);
+          });
+
+          return null;
+        },
+
+        async collectInspirationDashboardImages() {
+          const links = [];
+          let pageResp;
+          for (let attempt = 1; attempt <= 1; attempt++) {
+            try {
+              pageResp = await axios.get(
+                "https://pgkltd.co.uk/inspirations/",
+                {
+                  timeout: 20000,
+                  headers: {
+                    "User-Agent":
+                      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+                  },
+                }
+              );
+              break;
+            } catch (err) {
+              console.log(`Attempt ${attempt} failed: ${err.message}`);
+              if (attempt === 1) throw err;
+              await new Promise((r) => setTimeout(r, 2000 * attempt));
+            }
+          }
+          const html = pageResp.data;
+
+          let nonce = null;
+          const scripts = html.split(/<script[^>]*>/i);
+          for (const script of scripts) {
+            if (script.includes("pgkf_filter")) {
+              const match = script.match(
+                /var\s+NONCE\s*=\s*["']([a-f0-9]+)["']/
+              );
+              if (match) {
+                nonce = match[1];
+                break;
+              }
+            }
+          }
+
+          if (!nonce) {
+            console.log("Nonce not found on inspirations page");
+            return { totalPagesScanned: 0, images: [] };
+          }
+
+          console.log(`Found inspirations nonce: ${nonce}`);
+
+          const body = new URLSearchParams();
+          body.append("action", "pgkf_filter");
+          body.append("nonce", nonce);
+          body.append("offset", "0");
+          body.append("limit", "200");
+
+          let ajaxResp;
+          for (let attempt = 1; attempt <= 1; attempt++) {
+            try {
+              ajaxResp = await axios.post(
+                "https://pgkltd.co.uk/wp-admin/admin-ajax.php",
+                body.toString(),
+                {
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "User-Agent":
+                      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+                  },
+                  timeout: 20000,
+                }
+              );
+              break;
+            } catch (err) {
+              console.log(`AJAX attempt ${attempt} failed: ${err.message}`);
+              if (attempt === 1) throw err;
+              await new Promise((r) => setTimeout(r, 2000 * attempt));
+            }
+          }
+
+          const data = ajaxResp.data;
+          if (!data.success) {
+            console.log("AJAX not successful for inspirations");
+            return { totalPagesScanned: 0, images: [] };
+          }
+
+          console.log(`Total inspirations projects: ${data.data.total}`);
+
+          const initialLinks = [
+            ...html.matchAll(
+              /<a[^>]*class="pgkf-link"[^>]*href="([^"]+)"/g
+            ),
+          ].map((m) => m[1]);
+
+          const ajaxLinks = [
+            ...data.data.html.matchAll(
+              /<a[^>]*class="pgkf-link"[^>]*href="([^"]+)"/g
+            ),
+          ].map((m) => m[1]);
+
+          const allLinks = [
+            ...new Set([...initialLinks, ...ajaxLinks]),
+          ].filter((href) => href && href.includes("/portfolio/"));
+
+          console.log(`Unique inspiration portfolio links: ${allLinks.length}`);
+
+          const allImages = [];
+          const CONCURRENCY = 2;
+
+          for (let i = 0; i < allLinks.length; i += CONCURRENCY) {
+            const batch = allLinks.slice(i, i + CONCURRENCY);
+            const results = await Promise.all(
+              batch.map(async (pageUrl) => {
+                try {
+                  const imageUrls = await fetchProjectPageImageUrls(pageUrl);
+                  const slug = pageUrl.split("/portfolio/")[1] || pageUrl;
+                  console.log(
+                    `  [${i + batch.indexOf(pageUrl) + 1}/${allLinks.length}] ${slug}: ${imageUrls.length} images`
+                  );
+                  return imageUrls.map((url) => ({ url, page: pageUrl }));
+                } catch (err) {
+                  console.log(`  SKIP ${pageUrl}: ${err.message}`);
+                  return [];
+                }
+              })
+            );
+
+            results.forEach((pageImages) => allImages.push(...pageImages));
+
+            if (i + CONCURRENCY < allLinks.length) {
+              await sleep(1500);
+            }
+          }
+
+          console.log(`\nCollected ${allImages.length} images from ${allLinks.length} pages`);
+          return { totalPagesScanned: allLinks.length, images: allImages };
+        },
+
+        saveInspirationDashboardReport(data) {
+          const dir = path.join("cypress", "reports");
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+          }
+
+          const file = path.join(dir, data.filename || "inspiration-dashboard-images-report.json");
+          const uniqueUrls = [...new Set(data.images.map((i) => i.url))];
+
+          const output = {
+            totalImages: data.images.length,
+            uniqueImageUrls: uniqueUrls.length,
+            totalPagesScanned: data.totalPagesScanned,
+            collectedAt: data.collectedAt,
+            images: data.images,
+          };
+
+          fs.writeFileSync(file, JSON.stringify(output, null, 2));
+
+          console.log(`\n========================================`);
+          console.log(`  INSPIRATION DASHBOARD IMAGE REPORT`);
           console.log(`========================================`);
           console.log(`  Total Images  : ${data.images.length}`);
           console.log(`  Unique URLs   : ${uniqueUrls.length}`);
