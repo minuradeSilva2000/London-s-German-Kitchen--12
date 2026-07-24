@@ -4,7 +4,7 @@ Cypress-based automation testing project to detect broken image URLs on the [Lon
 
 ## Overview
 
-This project uses Cypress to crawl multiple dashboard sections of the PGK website, extract all image URLs, and generate structured JSON reports. It covers the following website sections:
+This project uses Cypress to crawl multiple dashboard sections of the PGK website, extract all image URLs, and generate structured JSON reports. It also includes a targeted image finder that scans the entire website to locate which page(s) contain specific image URLs. It covers the following website sections:
 
 - **Kitchens** - Portfolio grid pages via AJAX `pgkf_filter` endpoint
 - **Projects** - Portfolio grid pages via AJAX `pgkf_filter` endpoint
@@ -31,6 +31,7 @@ The project also includes grayscale/line-art image style detection using pixel-l
 ├── README.md                                  # Project documentation
 ├── cypress/
 │   ├── e2e/                                   # Test specs
+│   │   ├── found.cy.js                          # Scans entire site to find pages containing specific image URLs
 │   │   ├── kitchens.cy.js                     # Grayscale image scan for kitchen portfolio pages
 │   │   ├── kitchens-dashboard-images.cy.js    # Image URL collector for kitchens dashboard
 │   │   ├── project.cy.js                      # Grayscale image scan for project portfolio pages
@@ -44,6 +45,7 @@ The project also includes grayscale/line-art image style detection using pixel-l
 │   │   ├── project-dashboard-images-report.json
 │   │   ├── project-gray-image-report.json
 │   │   ├── gray-image-report.json
+│   │   ├── image-page-report.json
 │   │   ├── inspiration-dashboard-images-report.json
 │   │   ├── showroom-section-images-report.json
 │   │   ├── why-pgk-dashboard-images-report.json
@@ -57,6 +59,12 @@ The project also includes grayscale/line-art image style detection using pixel-l
 ```
 
 ## Test Specs
+
+### Image URL Finder
+
+| Spec | Source | Method | Description |
+|------|--------|--------|-------------|
+| `found.cy.js` | Entire site | Sitemap + AJAX + HTTP scan | Accepts an array of target image URLs, discovers all pages via sitemap sub-sitemaps, homepage links, and AJAX dashboard endpoints, then scans each page's HTML for exact URLs, CDN URL variants, and filename matches. Generates a JSON report mapping each image URL to the page(s) where it was found |
 
 ### Image URL Collectors
 
@@ -111,9 +119,23 @@ The `analyzeImageStyle` function:
 4. Checks color channel dominance and luminance (near-black/near-white)
 5. Returns match info for images with >85% gray pixels (grayscale-render or line-art-sketch)
 
+### Image URL Finder (`found.cy.js`)
+
+1. **Page discovery** - Runs three discovery methods in parallel:
+   - Parses `sitemap.xml` index, follows sub-sitemaps (`post-sitemap.xml`, `page-sitemap.xml`, `avada_portfolio-sitemap.xml`) to collect all indexed URLs
+   - Extracts all internal links from the homepage
+   - Fetches Kitchens, Projects, and Inspirations dashboards, extracts AJAX nonce, POSTs to `pgkf_filter` to get all portfolio card links
+2. **Page scanning** - For each discovered page, fetches the full HTML and searches for:
+   - Exact image URL match
+   - CDN URL variant (e.g. `media.pgkltd.co.uk` instead of `pgkltd.co.uk/wp-content/uploads`)
+   - Filename match (e.g. `IMG_9538.webp`)
+3. **Report generation** - Saves results to `cypress/reports/image-page-report.json` with image URL, page URL, and matched string for each finding
+
 ## Reports
 
 All reports are saved as JSON files in `cypress/reports/`. Each report includes:
+
+### Image URL Collector Reports
 
 ```json
 {
@@ -128,6 +150,23 @@ All reports are saved as JSON files in `cypress/reports/`. Each report includes:
       "page": "https://pgkltd.co.uk/showrooms/amersham/",
       "showroom": "Amersham",
       "source": "showroom-page"
+    }
+  ]
+}
+```
+
+### Image Page Report (`image-page-report.json`)
+
+```json
+{
+  "totalMatches": 2,
+  "totalPagesScanned": 261,
+  "collectedAt": "2026-07-24T08:13:17.293Z",
+  "matches": [
+    {
+      "imageUrl": "https://pgkltd.co.uk/wp-content/uploads/2026/05/04170049/IMG_9538.webp",
+      "pageUrl": "https://pgkltd.co.uk/portfolio/example/",
+      "matchedString": "IMG_9538.webp"
     }
   ]
 }
@@ -158,6 +197,9 @@ npx cypress run
 # Run a specific spec
 npx cypress run --spec "cypress/e2e/finance-dashboard-images.cy.js"
 
+# Run the image URL finder
+npx cypress run --spec "cypress/e2e/found.cy.js"
+
 # Run with browser selection
 npx cypress run --browser chrome
 ```
@@ -182,3 +224,4 @@ Key settings in `cypress.config.js`:
 - The "Why PGK" nav link points to `/pgk-approach/` (not `/why-pgk/` which returns 404)
 - The Finance Options page is at `/finance/` (static content, no AJAX grid)
 - All image extraction filters out SVGs, logos, gravatars, data URIs, and analytics/tracking pixels
+- The `found.cy.js` image URL finder discovers 261+ pages by combining sitemap URLs, homepage links, and AJAX-loaded portfolio links from all three dashboard sections
