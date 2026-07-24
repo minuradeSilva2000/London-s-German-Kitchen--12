@@ -1719,6 +1719,7 @@ module.exports = defineConfig({
 
           return null;
         },
+           
 
         saveReport(data) {
           const dir = path.join("cypress", "reports");
@@ -1743,9 +1744,6 @@ module.exports = defineConfig({
             images: images,
           };
 
-
-
-
           fs.writeFileSync(file, JSON.stringify(output, null, 2));
 
           console.log(`\n========================================`);
@@ -1760,6 +1758,428 @@ module.exports = defineConfig({
           images.forEach((img, i) => {
             console.log(`  ${i + 1}. ${img.url}`);
           });
+
+          return null;
+        },
+
+        async getAllPageUrls() {
+          const BASE = "https://pgkltd.co.uk";
+
+          async function fetchHtml(url) {
+            const resp = await retryRequest(() =>
+              axios.get(url, {
+                timeout: 20000,
+                headers: {
+                  "User-Agent":
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+                },
+              })
+            );
+            return typeof resp.data === "string" ? resp.data : JSON.stringify(resp.data);
+          }
+
+          async function discoverPagesFromSitemap() {
+            const pageUrls = new Set();
+            const subSitemaps = [];
+
+            try {
+              const xml = await fetchHtml(`${BASE}/sitemap.xml`);
+              const subSitemapRegex = /<sitemap>\s*<loc>([^<]+)<\/loc>/gi;
+              let m;
+              while ((m = subSitemapRegex.exec(xml)) !== null) {
+                const subLoc = m[1].trim();
+                if (subLoc.endsWith(".xml") && subLoc.startsWith(BASE)) {
+                  subSitemaps.push(subLoc);
+                }
+              }
+            } catch (err) {
+              console.log(`  Main sitemap failed: ${err.message}`);
+            }
+
+            for (const subUrl of subSitemaps) {
+              try {
+                const xml = await fetchHtml(subUrl);
+                const locRegex = /<loc>([^<]+)<\/loc>/gi;
+                let m;
+                while ((m = locRegex.exec(xml)) !== null) {
+                  const loc = m[1].trim();
+                  if (
+                    loc.startsWith(BASE) &&
+                    !loc.includes("/wp-content/") &&
+                    !loc.includes("/wp-json/") &&
+                    !loc.includes(".xml") &&
+                    !loc.includes("/feed/")
+                  ) {
+                    pageUrls.add(loc);
+                  }
+                }
+              } catch (err) {
+                console.log(`  Sub-sitemap ${subUrl} failed: ${err.message}`);
+              }
+            }
+
+            return [...pageUrls];
+          }
+
+          async function discoverPagesFromHomepage() {
+            const pageUrls = new Set();
+            try {
+              const html = await fetchHtml(BASE);
+              const linkRegex = /href=["'](https?:\/\/pgkltd\.co\.uk\/[^"']*)/gi;
+              let m;
+              while ((m = linkRegex.exec(html)) !== null) {
+                let url = m[1].split("#")[0].split("?")[0].replace(/\/$/, "");
+                if (
+                  url.startsWith(BASE) &&
+                  !url.includes("/wp-content/") &&
+                  !url.includes("/wp-json/") &&
+                  !url.includes("/feed/") &&
+                  !url.includes("/wp-admin/") &&
+                  !url.includes("/xmlrpc") &&
+                  !url.includes("/comments") &&
+                  url !== BASE
+                ) {
+                  pageUrls.add(url);
+                }
+              }
+            } catch (err) {
+              console.log(`  Homepage fetch failed: ${err.message}`);
+            }
+            return [...pageUrls];
+          }
+
+          async function fetchDashboardLinks(dashboardUrl, label) {
+            const pageUrls = new Set();
+            try {
+              const html = await fetchHtml(dashboardUrl);
+
+              let nonce = null;
+              const scripts = html.split(/<script[^>]*>/i);
+              for (const script of scripts) {
+                if (script.includes("pgkf_filter")) {
+                  const match = script.match(
+                    /var\s+NONCE\s*=\s*["']([a-f0-9]+)["']/
+                  );
+                  if (match) {
+                    nonce = match[1];
+                    break;
+                  }
+                }
+              }
+
+              if (nonce) {
+                const body = new URLSearchParams();
+                body.append("action", "pgkf_filter");
+                body.append("nonce", nonce);
+                body.append("offset", "0");
+                body.append("limit", "200");
+
+                const ajaxResp = await axios.post(
+                  `${BASE}/wp-admin/admin-ajax.php`,
+                  body.toString(),
+                  {
+                    headers: {
+                      "Content-Type": "application/x-www-form-urlencoded",
+                      "User-Agent":
+                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+                    },
+                    timeout: 20000,
+                  }
+                );
+
+                if (ajaxResp.data.success) {
+                  const links = [
+                    ...ajaxResp.data.data.html.matchAll(
+                      /href="([^"]+)"/g
+                    ),
+                  ]
+                    .map((m) => m[1])
+                    .filter(
+                      (href) =>
+                        href.startsWith("http") &&
+                        !href.includes("/wp-content/") &&
+                        !href.includes("/wp-json/")
+                    );
+
+                  links.forEach((href) => pageUrls.add(href.replace(/\/$/, "")));
+                }
+              }
+            } catch (err) {
+              console.log(`  ${label} failed: ${err.message}`);
+            }
+            return [...pageUrls];
+          }
+
+          console.log("\n=== Discovering pages ===");
+
+          const [sitemapPages, homepageLinks, kitchensLinks, projectsLinks, inspirationsLinks] =
+            await Promise.all([
+              discoverPagesFromSitemap(),
+              discoverPagesFromHomepage(),
+              fetchDashboardLinks(`${BASE}/kitchens/`, "Kitchens"),
+              fetchDashboardLinks(`${BASE}/projects/`, "Projects"),
+              fetchDashboardLinks(`${BASE}/inspirations/`, "Inspirations"),
+            ]);
+
+          const allPageUrls = [
+            ...new Set([
+              BASE,
+              ...sitemapPages,
+              ...homepageLinks,
+              ...kitchensLinks,
+              ...projectsLinks,
+              ...inspirationsLinks,
+            ]),
+          ];
+
+          console.log(`  Total unique pages discovered: ${allPageUrls.length}`);
+          return allPageUrls;
+        },
+
+        async findPagesContainingImages(targetImageUrls) {
+          const BASE = "https://pgkltd.co.uk";
+          const CONCURRENCY = 5;
+          const BATCH_DELAY = 1000;
+          const matches = [];
+
+          function buildSearchStrings(imgUrl) {
+            const strings = [imgUrl];
+            const path = imgUrl.replace(BASE, "");
+            if (path !== imgUrl) strings.push(path);
+
+            const lastTwoParts = imgUrl.split("/").slice(-2).join("/");
+            strings.push(lastTwoParts);
+
+            const filename = imgUrl.split("/").pop();
+            strings.push(filename);
+
+            if (imgUrl.includes("wp-content/uploads")) {
+              const cdnUrl = imgUrl
+                .replace(`${BASE}/wp-content/uploads/`, "https://media.pgkltd.co.uk/")
+                .replace(/\/\d+\//, "/");
+              strings.push(cdnUrl);
+              strings.push(cdnUrl.split("/").slice(-2).join("/"));
+              strings.push(cdnUrl.split("/").pop());
+            }
+
+            return [...new Set(strings)];
+          }
+
+          async function fetchHtml(url) {
+            const resp = await retryRequest(() =>
+              axios.get(url, {
+                timeout: 20000,
+                headers: {
+                  "User-Agent":
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+                },
+              })
+            );
+            return typeof resp.data === "string" ? resp.data : JSON.stringify(resp.data);
+          }
+
+          async function discoverPagesFromSitemap() {
+            const pageUrls = new Set();
+            const subSitemaps = [];
+            try {
+              const xml = await fetchHtml(`${BASE}/sitemap.xml`);
+              const subSitemapRegex = /<sitemap>\s*<loc>([^<]+)<\/loc>/gi;
+              let m;
+              while ((m = subSitemapRegex.exec(xml)) !== null) {
+                const subLoc = m[1].trim();
+                if (subLoc.endsWith(".xml") && subLoc.startsWith(BASE)) {
+                  subSitemaps.push(subLoc);
+                }
+              }
+            } catch (err) {
+              console.log(`  Sitemap failed: ${err.message}`);
+            }
+            for (const subUrl of subSitemaps) {
+              try {
+                const xml = await fetchHtml(subUrl);
+                const locRegex = /<loc>([^<]+)<\/loc>/gi;
+                let m;
+                while ((m = locRegex.exec(xml)) !== null) {
+                  const loc = m[1].trim();
+                  if (
+                    loc.startsWith(BASE) &&
+                    !loc.includes("/wp-content/") &&
+                    !loc.includes("/wp-json/") &&
+                    !loc.includes(".xml") &&
+                    !loc.includes("/feed/")
+                  ) {
+                    pageUrls.add(loc);
+                  }
+                }
+              } catch (err) {}
+            }
+            return [...pageUrls];
+          }
+
+          async function discoverPagesFromHomepage() {
+            const pageUrls = new Set();
+            try {
+              const html = await fetchHtml(BASE);
+              const linkRegex = /href=["'](https?:\/\/pgkltd\.co\.uk\/[^"']*)/gi;
+              let m;
+              while ((m = linkRegex.exec(html)) !== null) {
+                let url = m[1].split("#")[0].split("?")[0].replace(/\/$/, "");
+                if (
+                  url.startsWith(BASE) &&
+                  !url.includes("/wp-content/") &&
+                  !url.includes("/wp-json/") &&
+                  !url.includes("/feed/") &&
+                  !url.includes("/wp-admin/") &&
+                  url !== BASE
+                ) {
+                  pageUrls.add(url);
+                }
+              }
+            } catch (err) {}
+            return [...pageUrls];
+          }
+
+          async function fetchDashboardLinks(dashboardUrl) {
+            const pageUrls = new Set();
+            try {
+              const html = await fetchHtml(dashboardUrl);
+              let nonce = null;
+              const scripts = html.split(/<script[^>]*>/i);
+              for (const script of scripts) {
+                if (script.includes("pgkf_filter")) {
+                  const match = script.match(
+                    /var\s+NONCE\s*=\s*["']([a-f0-9]+)["']/
+                  );
+                  if (match) { nonce = match[1]; break; }
+                }
+              }
+              if (nonce) {
+                const body = new URLSearchParams();
+                body.append("action", "pgkf_filter");
+                body.append("nonce", nonce);
+                body.append("offset", "0");
+                body.append("limit", "200");
+                const ajaxResp = await axios.post(
+                  `${BASE}/wp-admin/admin-ajax.php`,
+                  body.toString(),
+                  {
+                    headers: {
+                      "Content-Type": "application/x-www-form-urlencoded",
+                      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/138.0.0.0",
+                    },
+                    timeout: 20000,
+                  }
+                );
+                if (ajaxResp.data.success) {
+                  [...ajaxResp.data.data.html.matchAll(/href="([^"]+)"/g)]
+                    .map((m) => m[1])
+                    .filter((h) => h.startsWith("http") && !h.includes("/wp-content/"))
+                    .forEach((h) => pageUrls.add(h.replace(/\/$/, "")));
+                }
+              }
+            } catch (err) {}
+            return [...pageUrls];
+          }
+
+          const searchStringsPerImage = targetImageUrls.map((u) => ({
+            originalUrl: u,
+            searchStrings: buildSearchStrings(u),
+          }));
+
+          console.log("\n=== Discovering pages ===");
+          const [sitemapPages, homepageLinks, kitchensLinks, projectsLinks, inspirationsLinks] =
+            await Promise.all([
+              discoverPagesFromSitemap(),
+              discoverPagesFromHomepage(),
+              fetchDashboardLinks(`${BASE}/kitchens/`),
+              fetchDashboardLinks(`${BASE}/projects/`),
+              fetchDashboardLinks(`${BASE}/inspirations/`),
+            ]);
+
+          const allPageUrls = [
+            ...new Set([BASE, ...sitemapPages, ...homepageLinks, ...kitchensLinks, ...projectsLinks, ...inspirationsLinks]),
+          ];
+
+          console.log(`  Total pages: ${allPageUrls.length}`);
+          console.log(`  Target images: ${targetImageUrls.length}`);
+          console.log("\n=== Scanning pages ===\n");
+
+          for (let i = 0; i < allPageUrls.length; i += CONCURRENCY) {
+            const batch = allPageUrls.slice(i, i + CONCURRENCY);
+            await Promise.all(
+              batch.map(async (pageUrl) => {
+                try {
+                  const html = await fetchHtml(pageUrl);
+                  for (const { originalUrl, searchStrings } of searchStringsPerImage) {
+                    for (const s of searchStrings) {
+                      if (html.includes(s)) {
+                        matches.push({
+                          imageUrl: originalUrl,
+                          pageUrl: pageUrl,
+                          matchedString: s,
+                        });
+                        break;
+                      }
+                    }
+                  }
+                  const idx = i + batch.indexOf(pageUrl) + 1;
+                  const slug = pageUrl.replace(BASE, "") || "/";
+                  const found = matches.some((m) => m.pageUrl === pageUrl);
+                  console.log(`  [${idx}/${allPageUrls.length}] ${slug} ${found ? ">>> MATCH <<<" : ""}`);
+                } catch (err) {
+                  const idx = i + batch.indexOf(pageUrl) + 1;
+                  console.log(`  [${idx}/${allPageUrls.length}] ERROR: ${pageUrl.replace(BASE, "")} - ${err.message}`);
+                }
+              })
+            );
+            if (i + CONCURRENCY < allPageUrls.length) await sleep(BATCH_DELAY);
+          }
+
+          console.log(`\n=== Scan complete ===`);
+          console.log(`Pages scanned: ${allPageUrls.length}`);
+          console.log(`Total matches: ${matches.length}`);
+
+          return {
+            totalMatches: matches.length,
+            totalPagesScanned: allPageUrls.length,
+            collectedAt: new Date().toISOString(),
+            matches,
+          };
+        },
+
+        saveImagePageReport(data) {
+          const dir = path.join("cypress", "reports");
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+          }
+
+          const file = path.join(dir, "image-page-report.json");
+
+          const output = {
+            totalMatches: data.totalMatches,
+            totalPagesScanned: data.totalPagesScanned,
+            collectedAt: data.collectedAt,
+            matches: data.matches,
+          };
+
+          fs.writeFileSync(file, JSON.stringify(output, null, 2));
+
+          console.log(`\n========================================`);
+          console.log(`  IMAGE-PAGE REPORT`);
+          console.log(`========================================`);
+          console.log(`  Total Matches    : ${data.totalMatches}`);
+          console.log(`  Pages Scanned    : ${data.totalPagesScanned}`);
+          console.log(`  Saved to         : ${file}`);
+          console.log(`========================================\n`);
+
+          if (data.matches.length > 0) {
+            data.matches.forEach((match, i) => {
+              console.log(`  ${i + 1}. Image: ${match.imageUrl}`);
+              console.log(`     Found on: ${match.pageUrl}`);
+            });
+          } else {
+            console.log("  No matches found for the target image URLs.");
+          }
 
           return null;
         },
